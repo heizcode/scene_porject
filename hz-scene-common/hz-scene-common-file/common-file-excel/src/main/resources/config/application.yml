@@ -1,0 +1,19 @@
+server:
+  port: 9001
+spring:
+  #数据库配置
+  datasource:
+    url: jdbc:mysql://localhost:3309/mytest?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+#redis配置
+#  redis:
+#    database: 5
+#    host: 192.168.101.201         # Redis服务器地址
+#    port: 6379              # Redis服务器连接端口
+#    password:               # Redis服务器连接密码（默认为空）
+
+mybatis:  #mybatyis的配置
+  mapper-locations: classpath:mappers/*.xml #指定mapper的配置文件的路径是mapper文件夹下的所有 xml文件。
