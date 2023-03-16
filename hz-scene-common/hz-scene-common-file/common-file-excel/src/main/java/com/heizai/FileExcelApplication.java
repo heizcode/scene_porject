@@ -1,5 +1,6 @@
 package com.heizai;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -12,6 +13,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @since JDK1.8
  */
 @SpringBootApplication
+@MapperScan(basePackages = "com.heizai.easypoi.mapper")
 public class FileExcelApplication {
 
     /**
