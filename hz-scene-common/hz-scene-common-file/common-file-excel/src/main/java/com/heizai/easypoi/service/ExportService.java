@@ -17,6 +17,7 @@ public interface ExportService extends IService<WiseLog> {
 
     /**
      * 注解方式导出
+     * @param response
      */
     void annotationExportList(HttpServletResponse response);
 

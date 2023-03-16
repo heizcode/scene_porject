@@ -1,4 +1,6 @@
 server:
+  profiles:
+    active: dev
   port: 9001
 spring:
   application:
@@ -17,5 +19,18 @@ spring:
 #    port: 6379              # Redis服务器连接端口
 #    password:               # Redis服务器连接密码（默认为空）
 
-mybatis:  #mybatyis的配置
-  mapper-locations: classpath:mappers/*.xml #指定mapper的配置文件的路径是mapper文件夹下的所有 xml文件。
+itcode:
+  logging:
+    path: D:\Downloads\Temp_Cache\Logs\Common\File\Excel
+
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*Mapper.xml,classpath:/mapper/**/*Dao.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.wisestars.mbg.**.entity
+  configuration:
+    # 是否将sql打印到控制面板(该配置会将sql语句和查询的结果都打印到控制台)
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  logging:
+    level:
+      # 日志级别
+      com.example.mapper: debug

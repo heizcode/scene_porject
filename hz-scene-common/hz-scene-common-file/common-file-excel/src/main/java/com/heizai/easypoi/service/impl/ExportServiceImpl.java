@@ -31,6 +31,7 @@ public class ExportServiceImpl extends ServiceImpl<ExportMapper, WiseLog> implem
 
     /**
      * 注解方式导出
+     * @param response
      */
     @Override
     public void annotationExportList(HttpServletResponse response) {
@@ -40,10 +41,10 @@ public class ExportServiceImpl extends ServiceImpl<ExportMapper, WiseLog> implem
             // list对象复制
             List<WiseLogVo> wiseLogVoList = BeanUtils.copyProperties(wiseLogs, WiseLogVo.class);
             // 调用工具类导出
-            ExcelUtils.exportExcel(wiseLogVoList,"操作日志","日志",WiseLogVo.class,"日志记录.xlm",response);
+            ExcelUtils.exportExcel(wiseLogVoList,"操作日志","日志",WiseLogVo.class,"日志记录",response);
         } catch (IOException e) {
+            // Tips： 此处可以添加自定义异常抛出
             e.printStackTrace();
         }
     }
-
 }

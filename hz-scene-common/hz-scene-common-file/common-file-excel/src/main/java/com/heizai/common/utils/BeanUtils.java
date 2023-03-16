@@ -23,8 +23,8 @@ public class BeanUtils {
      * @param source source
      * @param clazz  class
      * @return T
-     * @author myyan
-     * @date 2022/12/22 15:15
+     * @author
+     * @date 2023/03/16 15:15
      */
     public static <T> T copyProperties(Object source, Class<T> clazz) {
         if (source == null) {
@@ -50,7 +50,7 @@ public class BeanUtils {
      * @param target      target
      * @return java.util.List<T>
      * @author
-     * @date 2022/12/22 15:18
+     * @date 2023/03/16 15:18
      */
     public static <T> List<T> copyProperties(List<?> sourcesList, Class<T> target) {
         if (sourcesList == null) {
@@ -65,8 +65,8 @@ public class BeanUtils {
      * @param sourceSet sourceSet
      * @param clazz     clazz
      * @return java.util.Set<T>
-     * @author myyan
-     * @date 2022/12/22 15:19
+     * @author
+     * @date 2023/03/16 15:19
      */
     public static <T> Set<T> copyProperties(Set<?> sourceSet, Class<T> clazz) {
         if (sourceSet == null) {
@@ -81,8 +81,8 @@ public class BeanUtils {
      * @param sourcePage sourcePage
      * @param clazz      clazz
      * @return com.baomidou.mybatisplus.extension.plugins.pagination.Page<T>
-     * @author myyan
-     * @date 2022/12/22 15:19
+     * @author
+     * @date 2023/03/16 15:19
      */
     public static <T> Page<T> copyProperties(Page<?> sourcePage, Class<T> clazz) {
         if (sourcePage == null) {
@@ -100,4 +100,21 @@ public class BeanUtils {
         result.setHitCount(sourcePage.isHitCount());
         return result;
     }
+
+    // list 转 map
+//    public static <T> Map<Object,T> listToMap(String fieldName, List<T> list){
+//        Map<Object,T> map = new HashMap<>();
+//        for (T e:list){
+//            Field declaredField = null;
+//            try {
+//                declaredField = e.getClass().getDeclaredField(fieldName);
+//                declaredField.setAccessible(true);
+//                Object fieldValue =  declaredField.get(e);
+//                map.put(fieldValue,e);
+//            } catch (Exception x) {
+//                x.printStackTrace();
+//            }
+//        }
+//        return map;
+//    }
 }
