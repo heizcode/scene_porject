@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>common-file-excel</module>
+        <module>common-file-pdf</module>
     </modules>
 
     <properties>

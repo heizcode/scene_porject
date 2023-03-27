@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.heizai.easypoi.mapper.PdfExportMapper">
+
+    <!--查询 模板导出 数据-->
+    <select id="queryTemplateExport" resultType="com.heizai.common.vo.SysLogTemplateExportVo">
+        SELECT remark, request_url, DATE_FORMAT(oper_time, '%Y-%m-%d') as operTime, oper_ip
+        FROM sys_log
+        WHERE business_status = 1
+          AND DATE_FORMAT(oper_time, '%Y-%m') = DATE_FORMAT('2021-6-1', '%Y-%m')
+        ORDER BY oper_time;
+    </select>
+
+</mapper>

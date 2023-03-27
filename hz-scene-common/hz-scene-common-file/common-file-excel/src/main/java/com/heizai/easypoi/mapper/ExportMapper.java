@@ -1,7 +1,7 @@
 package com.heizai.easypoi.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.heizai.common.entity.WiseLog;
+import com.heizai.common.entity.SysLog;
 
 /**
  * @author zhulx
@@ -11,6 +11,6 @@ import com.heizai.common.entity.WiseLog;
  * @Date 2023/3/15 16:35
  * @since JDK1.8
  */
-public interface ExportMapper extends BaseMapper<WiseLog> {
+public interface ExportMapper extends BaseMapper<SysLog> {
 
 }

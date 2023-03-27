@@ -18,8 +18,8 @@ import java.time.LocalDateTime;
  * @since JDK1.8
  */
 @Data
-@TableName("wise_log")
-public class WiseLog implements Serializable {
+@TableName("sys_log")
+public class SysLog implements Serializable {
 
     private static final long serialVersionUID=1L;
 

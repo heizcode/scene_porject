@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
  * @since JDK1.8
  */
 @Data
-public class WiseLogVo implements Serializable {
+public class SysLogVo implements Serializable {
 
     private static final long serialVersionUID=1L;
 

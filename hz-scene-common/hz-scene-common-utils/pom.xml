@@ -10,6 +10,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>hz-scene-common-utils</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>common-log-spring-boot-starter</module>
+        <module>common-log-starter</module>
+    </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>

@@ -8,20 +8,30 @@
 
 #### 工程架构
 ```
-├── scene_porject				    父项目
-| ├── hz-scene-common				    公共模块
-| ├── ├── hz-scene-common-file                      文件相关模块
-| ├── ├──├── common-file-excel                      excel相关操作模块
-| ├── ├──├── common-file-word                       word相关操作模块
-| ├── ├──├── common-file-pdf                        pdf相关操作模块
-| ├── ├── hz-scene-common-mail                      发送相关模块
+├── scene_porject			        父项目
+| ├── hz-scene-common			        公共模块
+| ├── ├── hz-scene-common-file                  文件相关模块
+| ├── ├──├── common-file-excel                  excel相关操作模块
+| ├── ├──├── common-file-word                   word相关操作模块
+| ├── ├──├── common-file-pdf                    pdf相关操作模块
+| ├── ├── hz-scene-common-mail                  发送相关模块
+| ├── ├── hz-scene-common-utils                 工具相关模块
+| ├── ├──├── common-log-starter                 日志通用模块                   
 | ├──
 ```
 
 #### 更新计划
-1.  邮件发送实战()
-2.  导入导出实战()
-3.  枚举类的作用(查询匹配、mybatis)
+
+大功能代码
+1. 邮件发送实战()
+2. 导入导出实战(Easy Poi、Apache Poi、Easy Excel)
+3. 注解场景(日志、拦截)
+4. 定时任务封装()
+
+小功能代码
+1. 枚举类的作用(查询匹配、mybatis)
+2. 代码生成器()
+3. 树形菜单遍历
 
 #### 安装教程
 
