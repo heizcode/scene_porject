@@ -1,13 +1,14 @@
-package com.heizai.easypoi.service.impl;
+package com.heizai.aspose.service.impl;
 
+import cn.afterturn.easypoi.excel.entity.enmus.ExcelType;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.heizai.common.entity.SysLog;
 import com.heizai.common.utils.BeanUtils;
 import com.heizai.common.utils.ExcelUtils;
 import com.heizai.common.vo.SysLogVo;
-import com.heizai.easypoi.mapper.ExportMapper;
-import com.heizai.easypoi.service.ExportService;
+import com.heizai.aspose.mapper.ExportMapper;
+import com.heizai.aspose.service.ExportService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -41,7 +42,8 @@ public class ExportServiceImpl extends ServiceImpl<ExportMapper, SysLog> impleme
             // list对象复制
             List<SysLogVo> wiseLogVoList = BeanUtils.copyProperties(wiseLogs, SysLogVo.class);
             // 调用工具类导出
-            ExcelUtils.exportExcel(wiseLogVoList,"操作日志","日志", SysLogVo.class,"日志记录",response);
+            ExcelUtils.exportExcel(wiseLogVoList,"操作日志","日志",
+                    SysLogVo.class, ExcelType.XSSF,"日志记录",response);
         } catch (IOException e) {
             // Tips： 此处可以添加自定义异常抛出
             e.printStackTrace();

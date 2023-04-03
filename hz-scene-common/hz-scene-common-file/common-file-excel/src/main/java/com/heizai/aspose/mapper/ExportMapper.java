@@ -1,4 +1,4 @@
-package com.heizai.easypoi.mapper;
+package com.heizai.aspose.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.heizai.common.entity.SysLog;

@@ -20,25 +20,7 @@
             <artifactId>aspose-words</artifactId>
             <version>19.5</version>
         </dependency>
-
-        <!-- itextpdf -->
-        <dependency>
-            <groupId>com.itextpdf</groupId>
-            <artifactId>itextpdf</artifactId>
-            <version>5.5.13.1</version>
-        </dependency>
-        <!-- itext-asian -->
-        <dependency>
-            <groupId>com.itextpdf</groupId>
-            <artifactId>itext-asian</artifactId>
-            <version>5.2.0</version>
-        </dependency>
-        <!-- itextpdf-tool-xmlworker -->
-        <dependency>
-            <groupId>com.itextpdf.tool</groupId>
-            <artifactId>xmlworker</artifactId>
-            <version>5.5.13.1</version>
-        </dependency>
+        <!-- word模板导出使用的是 easy poi 记得引入 -->
     </dependencies>
 
     <properties>

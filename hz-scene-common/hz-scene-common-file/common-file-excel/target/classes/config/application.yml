@@ -1,6 +1,4 @@
 server:
-  profiles:
-    active: dev
   port: 9001
 spring:
   application:

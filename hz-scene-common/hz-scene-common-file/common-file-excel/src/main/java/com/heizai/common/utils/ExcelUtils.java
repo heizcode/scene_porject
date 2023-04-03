@@ -80,7 +80,7 @@ public class ExcelUtils {
     }
 
     /**
-     * excel 导出
+     * excel 导出(不带样式)
      *
      * @param list      数据列表
      * @param title     表格内数据标题
@@ -93,10 +93,27 @@ public class ExcelUtils {
         defaultExport(list, pojoClass, fileName, response, new ExportParams(title, sheetName, ExcelType.XSSF));
     }
 
+    /**
+     * excel 导出(带样式)
+     *
+     * @param list      数据列表
+     * @param title     表格内数据标题，如果设置为null，默认不显示
+     * @param sheetName sheet名称
+     * @param pojoClass 泛型pojo类型
+     * @param type      excel类型 HSSF || XSSF
+     * @param fileName  导出时的excel名称
+     * @param response
+     */
+    public static void exportExcel(List<?> list, String title, String sheetName, Class<?> pojoClass, ExcelType type, String fileName, HttpServletResponse response) throws IOException {
+        ExportParams exportParams = new ExportParams(title, sheetName, type);
+        //全局样式
+        exportParams.setStyle(ExcelStyleUtil.class);
+        defaultExport(list, pojoClass, fileName, response, exportParams);
+    }
 
 
     /**
-     * excel 导出
+     * excel 导出(不带样式)
      *
      * @param list           数据列表
      * @param title          表格内数据标题
@@ -124,7 +141,7 @@ public class ExcelUtils {
         try {
             response.setCharacterEncoding("UTF-8");
             response.setHeader("content-Type", "application/vnd.ms-excel");
-            response.setHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode(fileName + ".xlsx", "UTF-8"));
+            response.setHeader("Content-Disposition", "attachment;filename=" + URLEncoder.encode(fileName, "UTF-8"));
             workbook.write(response.getOutputStream());
         } catch (Exception e) {
             throw new IOException(e.getMessage());
