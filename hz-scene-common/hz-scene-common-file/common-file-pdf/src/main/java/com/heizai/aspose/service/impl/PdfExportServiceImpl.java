@@ -2,7 +2,6 @@ package com.heizai.aspose.service.impl;
 
 import cn.afterturn.easypoi.word.WordExportUtil;
 import cn.afterturn.easypoi.word.entity.MyXWPFDocument;
-import com.aspose.words.DocumentBuilder;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.heizai.common.utils.AsposeUtil;
 import com.heizai.common.vo.SysLogTemplateExportVo;
@@ -55,7 +54,6 @@ public class PdfExportServiceImpl extends ServiceImpl<PdfExportMapper, SysLog> i
             WordExportUtil.exportWord07(xwpfDocument, maps);
             String fileName = "后台系统（" + time + "）月操作详情_" + new Date();
             ByteArrayOutputStream bos = new ByteArrayOutputStream();
-            DocumentBuilder documentBuilder = new DocumentBuilder();
             xwpfDocument.write(bos);
             /*转换pdf*/
             InputStream input = new ByteArrayInputStream(bos.toByteArray());
