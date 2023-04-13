@@ -8,12 +8,12 @@ import com.heizai.common.utils.BeanUtils;
 import com.heizai.common.utils.ExcelUtils;
 import com.heizai.common.vo.SysLogVo;
 import com.heizai.aspose.mapper.ExportMapper;
-import com.heizai.aspose.service.ExportService;
+import com.heizai.aspose.service.IExportService;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.util.List;
 
 /**
@@ -25,9 +25,10 @@ import java.util.List;
  * @since JDK1.8
  */
 @Service
-public class ExportServiceImpl extends ServiceImpl<ExportMapper, SysLog> implements ExportService {
+@Slf4j
+public class ExportServiceImpl extends ServiceImpl<ExportMapper, SysLog> implements IExportService {
 
-    @Resource
+    @Autowired
     private ExportMapper exportMapper;
 
     /**
@@ -35,7 +36,7 @@ public class ExportServiceImpl extends ServiceImpl<ExportMapper, SysLog> impleme
      * @param response
      */
     @Override
-    public void annotationExportList(HttpServletResponse response) {
+    public void annotationExportList(HttpServletResponse response)  {
         try {
             // 获取数据集合
             List<SysLog> wiseLogs = exportMapper.selectList(Wrappers.<SysLog>lambdaQuery());
@@ -44,9 +45,10 @@ public class ExportServiceImpl extends ServiceImpl<ExportMapper, SysLog> impleme
             // 调用工具类导出
             ExcelUtils.exportExcel(wiseLogVoList,"操作日志","日志",
                     SysLogVo.class, ExcelType.XSSF,"日志记录",response);
-        } catch (IOException e) {
+        } catch (Exception e) {
             // Tips： 此处可以添加自定义异常抛出
-            e.printStackTrace();
+            log.error("日志数据导出失败：{}", e.getMessage(), e);
+            throw new RuntimeException("日志数据导出失败，请联系管理员！");
         }
     }
 }

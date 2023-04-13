@@ -16,11 +16,6 @@ spring:
 #    host: 192.168.101.201         # Redis服务器地址
 #    port: 6379              # Redis服务器连接端口
 #    password:               # Redis服务器连接密码（默认为空）
-
-itcode:
-  logging:
-    path: D:\Downloads\Temp_Cache\Logs\Common\File\Excel
-
 mybatis-plus:
   mapper-locations: classpath*:/mapper/**/*Mapper.xml,classpath:/mapper/**/*Dao.xml
   #实体扫描，多个package用逗号或者分号分隔
@@ -32,3 +27,16 @@ mybatis-plus:
     level:
       # 日志级别
       com.example.mapper: debug
+
+# 自定义其他配置
+hz-sys:
+  logging:
+    path: D:\Downloads\Temp_Cache\Logs\Common\File\Excel
+  #是否开启本地解析ip城市
+  ip:
+    local-parsing: true
+  #模块路径
+  # 模块公共
+  global:
+    moduleId: 1
+    moduleName: excel案例模块
