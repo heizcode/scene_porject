@@ -1,4 +1,4 @@
-package com.heizai.aspose.service.impl;
+package com.heizai.easypoi.service.impl;
 
 import cn.afterturn.easypoi.excel.entity.enmus.ExcelType;
 import com.baomidou.mybatisplus.core.toolkit.Wrappers;
@@ -7,12 +7,13 @@ import com.heizai.common.entity.SysLog;
 import com.heizai.common.utils.BeanUtils;
 import com.heizai.common.utils.ExcelUtils;
 import com.heizai.common.vo.SysLogVo;
-import com.heizai.aspose.mapper.ExportMapper;
-import com.heizai.aspose.service.IExportService;
+import com.heizai.easypoi.mapper.ExportMapper;
+import com.heizai.easypoi.service.IExportService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
@@ -28,7 +29,7 @@ import java.util.List;
 @Slf4j
 public class ExportServiceImpl extends ServiceImpl<ExportMapper, SysLog> implements IExportService {
 
-    @Autowired
+    @Resource
     private ExportMapper exportMapper;
 
     /**

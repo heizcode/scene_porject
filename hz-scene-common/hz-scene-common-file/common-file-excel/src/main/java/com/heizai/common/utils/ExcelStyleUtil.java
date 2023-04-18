@@ -9,7 +9,7 @@ import org.apache.poi.ss.usermodel.*;
  * @author zhulx
  * @version 1.0
  * @ClassName ExcelStyleUtil
- * @Description TODO
+ * @Description TODO easypoi 全局样式
  * @Date 2023/3/29 15:54
  * @since JDK1.8
  */
@@ -19,6 +19,7 @@ public class ExcelStyleUtil implements IExcelExportStyler {
     private static final short FONT_SIZE_TEN = 10;
     private static final short FONT_SIZE_ELEVEN = 11;
     private static final short FONT_SIZE_TWELVE = 12;
+
     /**
      * 大标题样式
      */

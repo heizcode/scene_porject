@@ -1,6 +1,6 @@
-package com.heizai.aspose.controller;
+package com.heizai.easypoi.controller;
 
-import com.heizai.aspose.service.IExportService;
+import com.heizai.easypoi.service.IExportService;
 import com.heizai.log.annotation.SysLog;
 import com.heizai.log.enums.BusinessTypeEnum;
 import lombok.extern.slf4j.Slf4j;
@@ -37,7 +37,7 @@ public class ExportController {
      * 注解方式导出
      * @param response
      */
-    @SysLog(remark = "添加用户", businessType = BusinessTypeEnum.EXPORT)
+    @SysLog(remark = "注解方式导出Excel", businessType = BusinessTypeEnum.EXPORT)
     @PostMapping("export")
     public void annotationExport(HttpServletResponse response) {
         // Tips:如果需要补充参数自行补充即可
